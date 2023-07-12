@@ -1,0 +1,1 @@
+docker run --gpus all legal-prompt:latest
