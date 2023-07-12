@@ -24,6 +24,8 @@ RUN : \
     && rm -rf /var/lib/apt/lists/* \
     && :
 
+
+RUN apt-get install python3-venv
 RUN python3.8 -m venv /venv
 ENV PATH=/venv/bin:$PATH
 
