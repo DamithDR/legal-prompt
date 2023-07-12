@@ -47,9 +47,9 @@ RUN python --version
 RUN pip3 install --upgrade pip
 RUN pip3 install torch torchvision torchaudio
 
-COPY legal-prompt /home/legal-prompt
-WORKDIR /home/legal-prompt/
-RUN cd /home/legal-prompt/
-RUN pip install -r requirements.txt
-
-ENTRYPOINT ["python","-m", "experiments.falcon"]
+# COPY legal-prompt /home/legal-prompt
+# WORKDIR /home/legal-prompt/
+# RUN cd /home/legal-prompt/
+# RUN pip install -r requirements.txt
+#
+# ENTRYPOINT ["python","-m", "experiments.falcon"]
