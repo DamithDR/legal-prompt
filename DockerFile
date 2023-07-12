@@ -25,7 +25,7 @@ RUN apt-get update -y && apt-get install -y \
 #     && rm -rf /var/lib/apt/lists/* \
 #     && :
 RUN apt update
-RUN apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+RUN apt install -y --no-install-recommends build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 RUN wget https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz
 RUN tar -xf Python-3.9.6.tgz
 RUN cd Python-3.9.6
