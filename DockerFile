@@ -13,7 +13,7 @@ RUN apt-get update -y && apt-get install -y \
     gcc \
     g++
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommend && \
     rm -rf /var/lib/apt/lists/*
 
 RUN : \
