@@ -28,6 +28,8 @@ RUN : \
 RUN python3.8 -m venv /venv
 ENV PATH=/venv/bin:$PATH
 
+RUN python --version
+
 RUN pip3 install torch torchvision torchaudio
 
 COPY legal-prompt /home/legal-prompt
