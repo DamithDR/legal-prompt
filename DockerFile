@@ -12,7 +12,7 @@ RUN apt-get update -y && apt-get install -y \
     unixodbc-dev \
     gcc \
     g++
-
+ENV DEBIAN_FRONTEND=noninteractive
 # RUN : \
 #     && apt-get update \
 #     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -31,8 +31,8 @@ RUN apt-get update -y && apt-get install -y \
 # RUN apt install python3.9
 # RUN python3.9 --version
 
-RUN apt install DEBIAN_FRONTEND=noninteractive -y --no-install-recommends wget build-essential checkinstall
-RUN apt install DEBIAN_FRONTEND=noninteractive -y --no-install-recommends libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
+RUN apt install -y --no-install-recommends wget build-essential checkinstall
+RUN apt install -y --no-install-recommends libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
 RUN cd /opt
 RUN wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tgz
 RUN tar xzf Python-3.9.16.tgz
