@@ -24,7 +24,10 @@ RUN apt-get update -y && apt-get install -y \
 #     && apt-get clean \
 #     && rm -rf /var/lib/apt/lists/* \
 #     && :
-RUN apt-get update && apt-get install -y python3.9 python3.9-dev
+RUN apt update
+RUN apt install software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get install -y python3.9
 
 RUN python3.9 -m venv /venv
 ENV PATH=/venv/bin:$PATH
