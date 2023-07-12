@@ -4,6 +4,6 @@ matplotlib==3.7.1
 datasets==2.11.0
 scikit-learn==1.2.2
 transformers==4.28.1
-langchain==0.0.27
+langchain==0.0.231
 openai==0.27.6
 pydantic==1.10.9
