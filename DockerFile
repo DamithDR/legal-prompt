@@ -36,7 +36,7 @@ RUN apt install -y --no-install-recommends libreadline-gplv2-dev libncursesw5-de
 RUN cd /opt
 RUN wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tgz
 RUN tar xzf Python-3.9.16.tgz
-RUN cd Python-3.9.16
+WORKDIR Python-3.9.16/
 RUN ./configure --enable-optimizations
 RUN make altinstall
 
