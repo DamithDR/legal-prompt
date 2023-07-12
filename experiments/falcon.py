@@ -1,17 +1,17 @@
 import pandas as pd
 import torch
 from langchain import HuggingFacePipeline
-from langchain import PromptTemplate,  LLMChain
+from langchain import PromptTemplate, LLMChain
 from sklearn import metrics
-from transformers import AutoTokenizer, pipeline,AutoModelForCausalLM
+from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 
 # model = "tiiuae/falcon-7b-instruct" #tiiuae/falcon-40b-instruct
-model = "tiiuae/falcon-40b-instruct" #tiiuae/falcon-40b-instruct
+model = "tiiuae/falcon-40b-instruct"  # tiiuae/falcon-40b-instruct
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 
 pipeline = pipeline(
-    "text-generation", #task
+    "text-generation",  # task
     model=model,
     tokenizer=tokenizer,
     torch_dtype=torch.bfloat16,
@@ -24,7 +24,7 @@ pipeline = pipeline(
     eos_token_id=tokenizer.eos_token_id
 )
 
-llm = HuggingFacePipeline(pipeline=pipeline, model_kwargs={'temperature':0})
+llm = HuggingFacePipeline(pipeline=pipeline, model_kwargs={'temperature': 0})
 template = """
 Think you are a judge in swiss courts, and you are need to judge the following case dellimitted by ```
                         - Decide whether the case is dismissal or approval
@@ -39,7 +39,6 @@ llm_chain = LLMChain(prompt=prompt, llm=llm)
 test = pd.read_csv('data/de.csv', sep="\t")
 final_predictions = []
 
-
 for text in test['text'].to_list():
     question = f""" Is the following case a dismissal or approval? case : ```{text}```
                         """
@@ -48,7 +47,6 @@ for text in test['text'].to_list():
         final_predictions.append(1)
     else:
         final_predictions.append(0)
-
 
 test['predictions'] = final_predictions
 metrics.classification_report([i for i in test['label'].to_list()], final_predictions, digits=6)
