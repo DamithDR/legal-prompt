@@ -1,10 +1,9 @@
 import pandas as pd
-from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 from langchain import HuggingFacePipeline
 from langchain import PromptTemplate,  LLMChain
-from transformers import AutoTokenizer, pipeline
+from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 from sklearn import metrics
 
 # model = "tiiuae/falcon-7b-instruct" #tiiuae/falcon-40b-instruct
