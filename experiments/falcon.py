@@ -49,5 +49,4 @@ for text in test['text'].to_list():
         final_predictions.append(0)
 
 test['predictions'] = final_predictions
-with open('falconoutput.txt','w')as f:
-    f.write(metrics.classification_report([i for i in test['label'].to_list()], final_predictions, digits=6))
+print(metrics.classification_report([i for i in test['label'].to_list()], final_predictions, digits=6))
