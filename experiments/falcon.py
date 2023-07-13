@@ -5,8 +5,8 @@ from langchain import PromptTemplate, LLMChain
 from sklearn import metrics
 from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 
-# model = "tiiuae/falcon-7b-instruct" #tiiuae/falcon-40b-instruct
-model = "tiiuae/falcon-40b-instruct"  # tiiuae/falcon-40b-instruct
+model = "tiiuae/falcon-7b-instruct" #tiiuae/falcon-40b-instruct
+# model = "tiiuae/falcon-40b-instruct"  # tiiuae/falcon-40b-instruct
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 
