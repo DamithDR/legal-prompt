@@ -1,10 +1,10 @@
 from transformers import AutoTokenizer, LlamaForCausalLM
 from transformers import pipeline
 
-pipe = pipeline("text-generation", model="meta-llama/Llama-2-13b-hf")
+pipe = pipeline("text-generation", model="meta-llama/Llama-2-7b-hf")
 
-model = LlamaForCausalLM.from_pretrained('meta-llama/Llama-2-13b-hf')
-tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-13b-hf')
+model = LlamaForCausalLM.from_pretrained('meta-llama/Llama-2-7b-hf')
+tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-7b-hf')
 
 
 while True:
