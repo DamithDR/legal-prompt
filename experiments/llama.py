@@ -3,7 +3,7 @@ from langchain import HuggingFacePipeline
 from langchain import PromptTemplate, LLMChain
 from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 
-model = "meta-llama/Llama-2-7b-hf"
+model = "meta-llama/Llama-2-13b-hf"
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 
