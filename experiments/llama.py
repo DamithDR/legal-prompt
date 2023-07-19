@@ -14,7 +14,6 @@ pipeline = pipeline(
     torch_dtype=torch.bfloat16,
     trust_remote_code=True,
     device_map="auto",
-    max_memory={2: "20GIB", 3: "20GIB"},
     max_length=200,
     do_sample=True,
     top_k=1,
