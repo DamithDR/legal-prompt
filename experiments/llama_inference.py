@@ -3,7 +3,11 @@ import transformers
 
 from transformers import AutoTokenizer
 
-model = "meta-llama/Llama-2-13b-hf"
+model_name = input("Input the model you want : ")
+
+# model = "meta-llama/Llama-2-7b-hf"
+# model = "meta-llama/Llama-2-32b-hf"
+model = model_name
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 pipeline = transformers.pipeline(
