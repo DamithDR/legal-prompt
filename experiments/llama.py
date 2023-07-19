@@ -1,8 +1,6 @@
-import pandas as pd
 import torch
 from langchain import HuggingFacePipeline
 from langchain import PromptTemplate, LLMChain
-from sklearn import metrics
 from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 
 model = "meta-llama/Llama-2-7b-hf"
