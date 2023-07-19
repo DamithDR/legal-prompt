@@ -3,13 +3,15 @@ from langchain import HuggingFacePipeline
 from langchain import PromptTemplate, LLMChain
 from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 
-model = "meta-llama/Llama-2-13b-hf"
+model_name = input("Input the model you want : ")
 
-tokenizer = AutoTokenizer.from_pretrained(model)
+# model = "meta-llama/Llama-2-13b-hf"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 pipeline = pipeline(
     "text-generation",  # task
-    model=model,
+    model=model_name,
     tokenizer=tokenizer,
     torch_dtype=torch.bfloat16,
     trust_remote_code=True,
