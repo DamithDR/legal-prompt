@@ -1,3 +1,5 @@
+import sys
+
 import torch
 from langchain import HuggingFacePipeline
 from langchain import PromptTemplate, LLMChain
@@ -34,5 +36,7 @@ llm_chain = LLMChain(prompt=prompt, llm=llm)
 
 while True:
     question = input("User Input : ")
+    if 'quit'.__eq__(question):
+        sys.exit(0)
     response = llm_chain.run(question)
     print(response)
