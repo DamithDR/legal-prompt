@@ -1,3 +1,5 @@
+import sys
+
 import torch
 import transformers
 
@@ -18,7 +20,9 @@ pipeline = transformers.pipeline(
 )
 
 while True:
-    question = input("User Input : ")
+    question = input("\nUser Input : ")
+    if 'quit'.__eq__(question):
+        sys.exit(0)
     sequences = pipeline(
         question,
         do_sample=True,
