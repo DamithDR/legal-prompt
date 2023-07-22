@@ -21,12 +21,12 @@ pipeline = pipeline(
     device_map="auto",
     max_length=200,
     do_sample=True,
-    top_k=1,
-    num_return_sequences=1,
+    top_k=10,
+    num_return_sequences=10,
     eos_token_id=tokenizer.eos_token_id
 )
 
-llm = HuggingFacePipeline(pipeline=pipeline, model_kwargs={'temperature': 1})
+llm = HuggingFacePipeline(pipeline=pipeline, model_kwargs={'temperature': 1,'do_sample':True})
 template = """
 Question: {question}
 Answer:"""
