@@ -26,7 +26,7 @@ pipeline = pipeline(
     eos_token_id=tokenizer.eos_token_id
 )
 
-llm = HuggingFacePipeline(pipeline=pipeline, model_kwargs={'temperature': 0})
+llm = HuggingFacePipeline(pipeline=pipeline, model_kwargs={'temperature': 1})
 template = """
 Question: {question}
 Answer:"""
